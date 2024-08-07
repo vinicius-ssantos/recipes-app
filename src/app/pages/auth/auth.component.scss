@@ -26,13 +26,13 @@
   height: 100%;
   width: 50%;
   z-index: 98;
-  trasition: all 1s ease;
-  trasform-origin: left;
-  transform-style: preserve-3d;
+  //transition: all 1s ease;
+  //transform-origin: left;
+  //transform-style: preserve-3d;
 }
 
 .container .rotate-active {
-  transform: rotateY(-180deg);
+  //transform: rotateY(-180deg);
 }
 
 .container .cover .front,
@@ -46,7 +46,7 @@
 }
 
 .cover .back {
-  transform: rotateY(180deg);
+  //transform: rotateY(180deg);
   backface-visibility: hidden;
 }
 
@@ -63,7 +63,7 @@
 
 .container .cover::after {
   opacity: 0.3;
-  trasform: rotateY(180deg);
+  //transform: rotateY(180deg);
   backface-visibility: hidden;
 }
 
