@@ -24,9 +24,8 @@ export class AuthComponent {
 
 
   isRegister: boolean = false;
-  toggleForm() {
-    this.isRegister = !this.isRegister;
-  }
+
+
   registerationForm= new FormGroup({
     fullName: new FormControl("",[Validators.required]),
     email: new FormControl("",[Validators.required,Validators.email]),
@@ -48,8 +47,9 @@ export class AuthComponent {
     console.log("Login",this.loginForm.value)
   }
 
-
-
+  toggleForm() {
+    this.isRegister = !this.isRegister;
+  }
 
 
 }

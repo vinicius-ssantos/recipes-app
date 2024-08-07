@@ -60,49 +60,59 @@
             </div>
 
 
+<!--            <div>-->
+<!--              <button class="w-full" mat-raised-button color="primary" type="submit">-->
+<!--                Register-->
+<!--              </button>-->
+<!--            </div>-->
             <div>
-              <button class="w-full" mat-raised-button color="primary" type="submit">
-                Register
-              </button>
+              <button class="w-full" mat-raised-button color="primary" type="submit">Register</button>
+               <button class="w-full" mat-button (click)="toggleForm()" color="primary" ><span>Have an account ? </span>Sign in</button>
+
             </div>
           </form>
 
         </div>
-      </div>
-      <div *ngIf="isRegister" class="signup-form">
-        <h1 class="text-lg font-bold text-center pb-8">Login</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="">
+        <div *ngIf="isRegister" class="signup-form">
+          <h1 class="text-lg font-bold text-center pb-8">Login</h1>
+          <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="">
 
-          <div class="mb-4">
-            <mat-form-field class="w-full">
-              <mat-label class="text-gray-200">Email</mat-label>
-              <input matInput
-                     placeholder="Email"
-                     formControlName="email"
-                     class="py-2 py-3 text-gray-200 mt-1 focus:shadow-outline"
-              >
-            </mat-form-field>
-          </div>
+            <div class="mb-4">
+              <mat-form-field class="w-full">
+                <mat-label class="text-gray-200">Email</mat-label>
+                <input matInput
+                       placeholder="Email"
+                       formControlName="email"
+                       class="py-2 py-3 text-gray-200 mt-1 focus:shadow-outline"
+                >
+              </mat-form-field>
+            </div>
 
-          <div class="mb-4">
-            <mat-form-field class="w-full">
-              <mat-label class="text-gray-200">Password</mat-label>
-              <input matInput
-                     placeholder="Password"
-                     formControlName="password"
-                     class="py-2 py-3 text-gray-200 mt-1 focus:shadow-outline"
-              >
-            </mat-form-field>
-          </div>
+            <div class="mb-4">
+              <mat-form-field class="w-full">
+                <mat-label class="text-gray-200">Password</mat-label>
+                <input matInput
+                       placeholder="Password"
+                       formControlName="password"
+                       class="py-2 py-3 text-gray-200 mt-1 focus:shadow-outline"
+                >
+              </mat-form-field>
+            </div>
 
 
+<!--            <div>-->
+<!--              <button class="w-full" mat-raised-button color="primary" type="submit">-->
+<!--                Login-->
+<!--              </button>-->
+<!--            </div>-->
+          </form>
           <div>
-            <button class="w-full" mat-raised-button color="primary" type="submit">
-              Login
-            </button>
+            <button class="w-full" mat-raised-button color="primary" type="submit">Login</button>
+            <button class="flex items-center gap-2 justify-center mt-9" mat-button (click)="toggleForm()" color="primary"><span>Dont have account ? </span>Sign out</button>
           </div>
-        </form>
+        </div>
       </div>
+
 
 
     </div>
