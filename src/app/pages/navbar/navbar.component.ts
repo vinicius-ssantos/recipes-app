@@ -18,7 +18,7 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent {
 
-  user: any = null;
+  user: any ;
 
   constructor(public authService: AuthService,private router:Router) {
   }

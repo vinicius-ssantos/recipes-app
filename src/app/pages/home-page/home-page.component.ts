@@ -37,7 +37,7 @@ constructor(
 }
 
 
-  handleOpemCreateRecipeForm(){
+  handleOpenCreateRecipeForm(){
     this.dialog.open(CreateRecipeFormComponent)
   }
   ngOnInit(): void {
