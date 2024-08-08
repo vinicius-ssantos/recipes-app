@@ -21,10 +21,10 @@
     </div>
     <div class="from h-full">
       <div class="form-content h-full">
-        <div *ngIf="!isRegister" class="login-form">
+        <div [hidden]="!isRegister" class="login-form">
           <h1 class="text-lg font-bold text-center pb-8">Signup</h1>
 
-          <form [formGroup]="registerationForm" (ngSubmit)="handleRegister()" class="">
+          <form [formGroup]="registerationForm"  class="">
             <div class="mb-4">
               <mat-form-field class="w-full">
                 <mat-label class="text-gray-200">Full Name</mat-label>
@@ -66,14 +66,14 @@
 <!--              </button>-->
 <!--            </div>-->
             <div>
-              <button class="w-full" mat-raised-button color="primary" type="submit">Register</button>
+              <button class="w-full" mat-raised-button color="primary" type="submit" (click)="handleRegister()" >Register</button>
                <button class="w-full" mat-button (click)="toggleForm()" color="primary" ><span>Have an account ? </span>Sign in</button>
 
             </div>
           </form>
 
         </div>
-        <div *ngIf="isRegister" class="signup-form">
+        <div [hidden]="isRegister" class="signup-form">
           <h1 class="text-lg font-bold text-center pb-8">Login</h1>
           <form [formGroup]="loginForm" (ngSubmit)="handleLogin()" class="">
 
@@ -107,7 +107,7 @@
 <!--            </div>-->
           </form>
           <div>
-            <button class="w-full" mat-raised-button color="primary" type="submit">Login</button>
+            <button class="w-full" mat-raised-button color="primary" type="submit"  (click)="handleLogin()">Login</button>
             <button class="flex items-center gap-2 justify-center mt-9" mat-button (click)="toggleForm()" color="primary"><span>Dont have account ? </span>Sign out</button>
           </div>
         </div>

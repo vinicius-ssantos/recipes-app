@@ -31,9 +31,10 @@ export class AuthService {
     })
 
 
-    return this.http.post<any>(`${this.baseUrl}/api/auth/signup`, { headers })
+    return this.http.get<any>(`${this.baseUrl}/api/user/profile`, { headers })
       .pipe(
         tap((user) => {
+          console.log("User", user)
           const currentState = this.authSubject.value;
           this.authSubject.next({ ...currentState, user })
         })

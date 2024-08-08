@@ -1,9 +1,10 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialog} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
-import { UpdateRecipeFormComponent } from '../update-recipe-form/update-recipe-form.component';
+import {UpdateRecipeFormComponent} from '../update-recipe-form/update-recipe-form.component';
+import {RecipeService} from "../../services/recipe/recipe.service";
 
 
 @Component({
@@ -15,9 +16,24 @@ import { UpdateRecipeFormComponent } from '../update-recipe-form/update-recipe-f
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RecipeCardComponent {
-  constructor(public dialog: MatDialog) {}
+
+  @Input() recipe: any;
+
+
+
+  constructor(public dialog: MatDialog,private recipeService:RecipeService) {
+
+  }
+
+
+
 
   handleOpenEditRecipeForm() {
-    this.dialog.open(UpdateRecipeFormComponent);
+    this.dialog.open(UpdateRecipeFormComponent,
+      {data:this.recipe});
+  }
+
+  handleDeleteRecipe() {
+    this.recipeService.deleteRecipes(this.recipe.id).subscribe()
   }
 }

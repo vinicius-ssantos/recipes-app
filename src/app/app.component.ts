@@ -6,7 +6,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {NavbarComponent} from "./pages/navbar/navbar.component";
 import {FooterComponent} from "./pages/footer/footer.component";
 import {HomePageComponent} from "./pages/home-page/home-page.component";
-import { AuthComponent } from './pages/auth/auth.component';
+import {AuthComponent} from './pages/auth/auth.component';
+import {AuthService} from "./services/auth/auth.service";
 
 @Component({
   selector: 'app-root',
@@ -26,4 +27,23 @@ import { AuthComponent } from './pages/auth/auth.component';
 })
 export class AppComponent {
   title = 'recipe-sharing';
+
+  user: any = null;
+
+  constructor(public authService: AuthService) {
+  }
+
+  ngOnInit(): void {
+    console.log("ngOnInit")
+    this.authService.getUserProfile().subscribe({
+      next: data => console.log("request user", data),
+      error: error => console.log("error", error)
+    });
+    this.authService.authSubject.subscribe(
+      (auth) => {
+        console.log("auth state",auth)
+        this.user=auth.user;
+      }
+    )
+  }
 }
