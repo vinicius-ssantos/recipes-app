@@ -31,7 +31,7 @@ export class UpdateRecipeFormComponent {
   onSubmit() {
     this.recipeService.updateRecipe(this.recipe.id);
     console.log("Values", this.recipeItem)
-    this.recipeItem=this.recipe
+    // this.recipeItem=this.recipe
   }
   ngOnInit(): void {
     this.recipeItem = this.recipe
